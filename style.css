@@ -1,23 +1,67 @@
-body{
- font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+body {
+  font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
 }
 
-.location{
+.location {
   font-size: 1.1em;
   font-weight: 600;
 }
 
-.nav-item >.nav-link:hover, svg:hover{
-color: rgb(255, 85, 0);
+.nav-item > .nav-link:hover,
+svg:hover {
+  color: rgb(255, 85, 0);
 }
 
-.search:focus{
-border: 2px solid rgb(189, 91, 42) ;
-caret-color: rgb(255, 85, 0);
+.search:focus {
+  border: 2px solid rgb(189, 91, 42);
+  caret-color: rgb(255, 85, 0);
 }
-.header{
+.header {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 1em 0.8em;
   background-color: rgb(243, 243, 243);
+}
 
+.restaurants {
+  border-radius: 10%;
+}
+
+.rNameC {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 0.8em;
+  color: rgb(88, 86, 86);
+}
+
+.rName {
+  font-size: 22px;
+  color: rgb(111, 110, 110);
+  font-weight: bolder;
+}
+
+.footer {
+  background-color: rgb(37, 37, 37);
+  padding: 4rem 0;
+  margin-top: 2em;
+}
+
+.mRestName {
+  padding-top: 0.5em;
+  font-size: 22px;
+  color: rgb(56, 56, 56);
+  font-weight: bolder;
+}
+.typesAvail {
+  font-size: small;
+  color: rgb(128, 128, 128);
+}
+.rHeader{
+  border-bottom: 0.3px dotted rgb(118, 118, 118);
+}
+
+.fs{
+  font-size: 0.8rem;
+}
+.fs1{
+  font-size: 0.85rem
 }
