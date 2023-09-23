@@ -12,10 +12,15 @@ svg:hover {
   color: rgb(255, 85, 0);
 }
 
+.shopcount{
+  color: rgb(255, 85, 0);
+}
+
 .search:focus {
   border: 2px solid rgb(189, 91, 42);
   caret-color: rgb(255, 85, 0);
 }
+
 .header {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   padding: 1em 0.8em;
@@ -51,53 +56,83 @@ svg:hover {
   color: rgb(56, 56, 56);
   font-weight: bolder;
 }
+
 .typesAvail {
   font-size: small;
   color: rgb(128, 128, 128);
 }
-.rHeader{
+
+.rHeader {
   border-bottom: 0.3px dotted rgb(118, 118, 118);
 }
 
-.fs{
-  font-size: 0.8rem;
+.fs {
+  font-size: 0.7rem;
 }
-.fs1{
-  font-size: 0.85rem
+.fs1 {
+  font-size: 0.72rem;
 }
-.bestS,.fa-star{
-  color:#ee9c00;
+
+.bestS,
+.fa-star {
+  color: #ee9c00;
   padding-left: 0.2em;
   font-size: 0.8em;
 }
 
-.dishN{
-  color: rgb(75, 75, 75);
-  font-size:medium;
-}
-.price{
+.dishN {
   color: rgb(75, 75, 75);
   font-size: medium;
 }
-.ingre{
-font-size: 0.8em;
-color:rgba(40,44,63,.45)
+
+.price {
+  color: rgb(75, 75, 75);
+  font-size: medium;
 }
-.btn-outline-success{
+
+.ingre {
+  font-size: 0.8em;
+  color: rgba(40, 44, 63, 0.45);
+}
+
+.btn-outline-success {
   border: none;
 }
-.btn-outline-success:hover{
+
+.btn-outline-success:hover {
   color: green;
 }
-.foodPhoto{
-  border-radius: 10%;
-  height:7em;
+
+.btn-outline-danger:hover {
+  color: rgb(211, 0, 0);
 }
-.itemC{
+
+.foodPhoto1 {
+  border-radius: 10%;
+}
+
+.dis-flex{
+  display: flex;
+}
+
+.itemC {
   padding-bottom: 20px;
   border-bottom: 0.3px dotted rgb(118, 118, 118);
 }
 
-.fssai{
+.fssai {
   border-bottom: 0.3px dotted rgb(118, 118, 118);
+}
+
+.searchBar {
+  position: relative;
+}
+
+#searchresult {
+  position: absolute;
+  top: 100%;
+  height: 17rem;
+  width: 98.2%;
+  background-color: rgb(255, 255, 255);
+  overflow-y: scroll;
 }

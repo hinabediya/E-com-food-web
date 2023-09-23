@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="/main.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -29,8 +30,39 @@
                 <span><i class="fa-solid fa-location-dot"></i> Locate me</span> 
               </div>
               </div>
-              <form class="d-flex col-lg-5" role="search">
-                <input class="form-control me-2 search" style="font-family:Arial,FontAwesome;" type="search" placeholder="&#xF002 Search" aria-label="Search">
+              <form class="d-flex col-lg-5 searchBar" role="search">
+                <input class="form-control me-2" id="search" onkeyup="searchItem()" style="font-family:Arial,FontAwesome;" type="search" placeholder="&#xF002 Search" aria-label="Search">
+            <div id="searchresult">
+              <div class="dis-flex pt-4 justify-content-around product" >
+                <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/ee5f8e06b300efc07c9fe3f4df40dfc4" alt="">
+              <div class="col-9 pt-3">
+                <div class="fs1 product-title">MCDonald's</div>
+                <div class="fs">Restaurant</div>
+              </div>
+              </div>
+              <div class="dis-flex pt-3 justify-content-around product">
+                <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/1ace5fa65eff3e1223feb696c956b38b" alt="">
+              <div class="col-9 pt-3">
+                <div class="fs1 product-title">Subway</div>
+                <div class="fs">Restaurant</div>
+              </div>
+              </div>
+              <div class="dis-flex pt-3 justify-content-around product">
+                <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf" alt="">
+              <div class="col-9 pt-3">
+                <div class="fs1 product-title">Burger King</div>
+                <div class="fs">Restaurant</div>
+              </div>
+              </div>
+              <div class="dis-flex pt-3 justify-content-around product">
+                <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/pynzlbxqiidgexcd6qpa" alt="">
+              <div class="col-9 pt-3">
+                <div class="fs1 product-title">Tibb's Frankie</div>
+                <div class="fs">Restaurant</div>
+              </div>
+              </div>
+              <div id="nofood" class="text-center pt-3" style="display: none;">No food items found.</div>
+            </div>
               </form>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -83,7 +115,7 @@
   <h3 class="text-secondary ps-5 pt-3"><strong>Restaurants with online food delivery</strong></h3>
 <div class="d-flex col-lg-12 justify-content-evenly pt-4">
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/mcd.html">
       <img class="restaurants"  src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ee5f8e06b300efc07c9fe3f4df40dfc4" alt="McDonald's" width="250" height="160">
     </a>
     <ul class="rNameC">
@@ -93,7 +125,7 @@
   </div>
 
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/burgerKing.html">
     <img class="restaurants" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf" alt="Burger King" width="250" height="160">    
     </a>
     <ul class="rNameC"><li class="rName">Burger King</li>
@@ -102,7 +134,7 @@
   </div>
 
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/wendy.html">
     <img class="restaurants" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f1aa621021a2826088089b89842d4e7c" alt="Wendy's" width="250" height="160">
     </a>
     <ul class="rNameC"><li class="rName">Wendy's</li>
@@ -111,7 +143,7 @@
   </div>
 
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/pancake99.html">
     <img class="restaurants" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/34730883accab5a649fc7331755cba26" width="250" height="160">
     </a>
     <ul class="rNameC"><li class="rName">99 Pancakes</li>
@@ -124,7 +156,7 @@
 
 <div class="d-flex col-lg-12 justify-content-evenly pt-3">
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/belgian.html">
     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/8cb220fa3997a3b928d2ffb6c098acaf" class="restaurants" width="250" height="160">
     </a>
     <ul class="rNameC"><li class="rName">Belgian Waffle</li>
@@ -133,7 +165,7 @@
   </div>
 
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/cream_stone.html">
     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ecdb8917a93d30f0f633ac4163119cd5" class="restaurants" width="250" height="160">
     </a>
     <ul class="rNameC"><li class="rName">Cream Stone</li>
@@ -142,7 +174,7 @@
   </div>
 
   <div>
-    <a href="http://127.0.0.1:5500/Website/restaurant.html">
+    <a href="http://127.0.0.1:5500/cheeseCo.html">
     <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/97208b0e2ccc4238c96ed21d1fa38977" class="restaurants" width="250" height="160">  
     </a>
     <ul class="rNameC"><li class="rName">Cheesecake & Co.</li>
@@ -209,7 +241,7 @@
       </div>
     
       <div>
-    <a href="http://127.0.0.1:5500/Website/subway.html">
+    <a href="http://127.0.0.1:5500/subway.html">
         <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/1ace5fa65eff3e1223feb696c956b38b" class="restaurants" width="250" height="160">
         </a>
         <ul class="rNameC"><li class="rName">Subway</li>
@@ -273,6 +305,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
       AOS.init();
+      const searchfield = document.getElementById('searchresult');
+searchfield.style.display="none";
     </script>
   </body>
 </html>
