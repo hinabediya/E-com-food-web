@@ -65,3 +65,39 @@ svg:hover {
 .fs1{
   font-size: 0.85rem
 }
+.bestS,.fa-star{
+  color:#ee9c00;
+  padding-left: 0.2em;
+  font-size: 0.8em;
+}
+
+.dishN{
+  color: rgb(75, 75, 75);
+  font-size:medium;
+}
+.price{
+  color: rgb(75, 75, 75);
+  font-size: medium;
+}
+.ingre{
+font-size: 0.8em;
+color:rgba(40,44,63,.45)
+}
+.btn-outline-success{
+  border: none;
+}
+.btn-outline-success:hover{
+  color: green;
+}
+.foodPhoto{
+  border-radius: 10%;
+  height:7em;
+}
+.itemC{
+  padding-bottom: 20px;
+  border-bottom: 0.3px dotted rgb(118, 118, 118);
+}
+
+.fssai{
+  border-bottom: 0.3px dotted rgb(118, 118, 118);
+}
