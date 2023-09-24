@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Restaurant</title>
+  <script src="/main.js" ></script>
+  <title>The Belgian Waffle Co.</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg col-12" >
@@ -28,8 +29,39 @@
           <span><i class="fa-solid fa-location-dot"></i> Locate me</span> 
         </div>
         </div>
-        <form class="d-flex col-lg-5" role="search">
-          <input class="form-control me-2 search" style="font-family:Arial,FontAwesome;" type="search" placeholder="&#xF002 Search" aria-label="Search">
+        <form class="d-flex col-lg-5 searchBar" role="search">
+          <input class="form-control me-2" id="search" onkeyup="searchItem()" style="font-family:Arial,FontAwesome;" type="search" placeholder="&#xF002 Search" aria-label="Search">
+      <div id="searchresult">
+        <div class="dis-flex pt-4 justify-content-around product" >
+          <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/ee5f8e06b300efc07c9fe3f4df40dfc4" alt="">
+        <div class="col-9 pt-3">
+          <div class="fs1 product-title">MCDonald's</div>
+          <div class="fs">Restaurant</div>
+        </div>
+        </div>
+        <div class="dis-flex pt-3 justify-content-around product">
+          <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/1ace5fa65eff3e1223feb696c956b38b" alt="">
+        <div class="col-9 pt-3">
+          <div class="fs1 product-title">Subway</div>
+          <div class="fs">Restaurant</div>
+        </div>
+        </div>
+        <div class="dis-flex pt-3 justify-content-around product">
+          <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/e33e1d3ba7d6b2bb0d45e1001b731fcf" alt="">
+        <div class="col-9 pt-3">
+          <div class="fs1 product-title">Burger King</div>
+          <div class="fs">Restaurant</div>
+        </div>
+        </div>
+        <div class="dis-flex pt-3 justify-content-around product">
+          <img class="col-2 rounded" height="70" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/pynzlbxqiidgexcd6qpa" alt="">
+        <div class="col-9 pt-3">
+          <div class="fs1 product-title">Tibb's Frankie</div>
+          <div class="fs">Restaurant</div>
+        </div>
+        </div>
+        <div id="nofood" class="text-center pt-3" style="display: none;">No food items found.</div>
+      </div>
         </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,23 +77,21 @@
           <li class="nav-item">
             <a class="nav-link" href="#"><span><i class="fa-solid fa-user"></i></span><strong> Profile</strong></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          <li class="nav-item" id="cartcount">
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-
   <div class="container-fluid" >
     <div class="row justify-content-around">
-      <div class=" col-lg-8 pt-5 rHeader">
+      <div class=" col-lg-8 pt-3 rHeader">
         <div class="d-flex justify-content-around " style="padding-top: 5rem;">
           <div class="d-flex col-lg-6">
             <ul class="list-unstyled d-flex">
               <li class="text-secondary fs pe-1">Home /</li>
-              <li class="text-secondary fs1"> Subway</li>
+              <li class="text-secondary fs1"> The Belgian Waffle Co.</li>
             </ul>
           </div>
           <div class="col-lg-6 text-end">
@@ -70,113 +100,114 @@
           </div>
         <div class="d-flex ">
           <ul class="list-unstyled col-6">
-            <li class="mRestName">Subway</li>
-            <li class="typesAvail pb-1">Salad, Snack, Desserts</li>
-           <li class="typesAvail">Timings: 10 AM - 12 PM</li>
-           <li class="text-secondary pt-3"><i class="fa-solid fa-person-biking pe-2 "></i> <span>2.5 kms | ₹41 Delivery fee will apply</span></li>
+            <li class="mRestName">The Belgian Waffle Co.</li>
+            <li class="typesAvail pb-1">Waffle, Desserts</li>
+           <li class="typesAvail">Timings: 11 AM - 2 AM</li>
+           <li class="text-secondary pt-3"><i class="fa-solid fa-person-biking pe-2 "></i> <span>2.2 kms | ₹41 Delivery fee will apply</span></li>
           </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-<div class="pt-3 d-flex justify-content-around">
-<div class="col-lg-8 d-flex itemC">
-<div class="col-lg-10 ps-2">
-  <ul class="list-unstyled ">
-    <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
-    <li class="pt-1 dishN"><strong>Paneer Achari</strong></li>
-    <li class="price">₹269</li>
-  </ul>
-  <div class="ingre col-lg-11">
-    <p>Multigrain toasted Sub with chunks of paneer, achari mayo, pickled onion, capsicum, tomato and chilli mayo. Serving size - 240 g/ 589 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.</p>
-  </div>
-</div>
-<div class="foodPhoto" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b33b19910a5f966e3afe9149b0326f88');background-size: contain; height:7em; width: 13.3%">
-<div class="text-center" style="padding-top: 5rem;"><button class="btn btn-outline-success w-75" style="font-size: x-small; background-color: white; font-weight: 600 ;">ADD<i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button></div>
-</div>
-</div>
-</div>
-
-<div class="pt-3 d-flex justify-content-around">
-  <div class="col-lg-8 d-flex itemC">
-  <div class="col-lg-10 ps-2">
-    <ul class="list-unstyled ">
-      <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
-      <li class="pt-1 dishN"><strong>Crunchy Mexican</strong></li>
-      <li class="price">₹279</li>
-    </ul>
-    <div class="ingre col-lg-11">
-      <p>Multigrain toasted sub with chilli bean patty, tomato, capsicum, onion, olives, jalapeño, southwest chipotle sauce & crunchy nachos. Serving size - 295 g/702 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.</p>
-    </div>
-  </div>
-  <div class="foodPhoto" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/d7cd2bf55697e97c568f5789299822a7'); background-size: contain; height:7em; width: 13.3%">
-  <div class="text-center"  style="padding-top: 5rem"><button class="btn btn-outline-success w-75" style="font-size: x-small;background-color: white;font-weight: 600 ;">ADD <i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button>
-  </div>
-  </div>
-  </div>
-  </div>
-
-  <div class="pt-3 d-flex justify-content-around">
-    <div class="col-lg-8 d-flex itemC">
-    <div class="col-lg-10 ps-2">
-      <ul class="list-unstyled ">
-        <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
-        <li class="pt-1 dishN"><strong>Chilli Cheese</strong></li>
-        <li class="price">₹269</li>
-      </ul>
-      <div class="ingre col-lg-11">
-        <p>Multigrain, 2-cheese toasted sub with herby aloo patty, jalapeño, onion & capsicum with chilli mayo. Serving size - 284 g/ 678 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.</p>
-      </div>
-    </div>
-    <div class="foodPhoto" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b33b19910a5f966e3afe9149b0326f88');background-size: contain; height:7em; width: 13.3%">
-      <div class="text-center" style="padding-top: 5rem;"><button class="btn btn-outline-success w-75" style="font-size: x-small; background-color: white; font-weight: 600 ;">ADD<i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button></div>
-      </div>
-    </div>
-    </div>
-
-    <div class="pt-3 d-flex justify-content-around">
-      <div class="col-lg-8 d-flex itemC">
-      <div class="col-lg-10 ps-2">
-        <ul class="list-unstyled ">
-          <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
-          <li class="pt-1 dishN"><strong>Italian Pesto</strong></li>
-          <li class="price">₹289</li>
-        </ul>
-        <div class="ingre col-lg-11">
-          <p>A pesto flavoured toasted sub loaded with tomatoes, cucumber & onions. This warm sandwich has flavourful spinach ‘n cheese patty topped with creamy Italian sauce & pesto sauce. Requires no customization. Serving size - 234 g/ 458 kcal. Allergens - Contains wheat, milk, barley, oats, nuts & soy.</p>
-        </div>
-      </div>
-      <div class="foodPhoto" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/343eb86e2156479e0cb62b700a04eefd');background-size: contain; height:7em; width: 13.3%">
-       <div class="text-center" style="padding-top: 5rem"><button class="btn btn-outline-success w-75" style="font-size: x-small; background-color: white;font-weight: 600 ;">ADD <i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button></div> 
-      </div>
-      </div>
-      </div>
-
-      <div class="pt-3 d-flex justify-content-around">
-        <div class="col-lg-8 d-flex itemC">
-        <div class="col-lg-10 ps-2">
-          <ul class="list-unstyled ">
-            <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
-            <li class="pt-1 dishN"><strong>Tandoori Tofu</strong></li>
-            <li class="price">₹209</li>
-          </ul>
-          <div class="ingre col-lg-11">
-            <p>Serves 1 | A delicious assortment of green peas, golden corn and diced carrots, dressed with a creamy mixture of eggless mayo sauce, and served on your favourite bread. Serving size : 15 cm - 219 g / 359 kcal , 30 cm - 438 g / 718 kcal. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, lettuce, tomatoes, onions, green peppers and cucumbers.</p>
-          </div>
-        </div>
-        <div class="foodPhoto" style="background-image: url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b33b19910a5f966e3afe9149b0326f88');background-size: contain; height:7em; width: 13.3%">
-          <div class="text-center" style="padding-top: 5rem;"><button class="btn btn-outline-success w-75" style="font-size: x-small; background-color: white; font-weight: 600 ;">ADD<i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button></div>
-          </div>
-        </div>
-        </div>
+  <div id="loopProducts"></div>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script>
+
+ <script>
     AOS.init();
+    //foodData is array of objects
+    var belgianData = [
+  {
+    id: 1,
+    foodName: "Chocolate Overload Dark Waffle",
+    price: 165,
+    description: "Signature Dark Chocolate Waffle + Melted Belgian Dark Chocolate. Double The Chocolate!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ggnwmgrznp4jjzwwyhjx",
+    IsProductAdded:false
+  },
+  {
+    id: 2,
+    foodName: "Almond Brownie Waffle",
+    price: 182,
+    description: "The Best Of Two Worlds In A Single Bite - A Waffle And A Brownie. With Deliciously Rich Melted Chocolate and Almonds. Your Doorway To Heaven!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lyohj85p1nfyuyn2dr73",
+    IsProductAdded:false
+  },
+  {
+    id: 3,
+    foodName: "Triple Chocolate Waffle",
+    price: 175,
+    description: "Signature Dark Chocolate Waffle + 3 Layers Of Melted White Chocolate, Belgian Milk Chocolate And Belgian Dark Chocolate. The Most Indulgent Chocolate Waffle Ever!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/onq8rhxujd0sx8kubaew",
+    IsProductAdded:false
+  },
+  {
+    id: 4,
+    foodName: "Naked Nutella Waffle",
+    price: 185,
+    description: "Classic Crispy Waffle + Premium European Chocolate Hazelnut Spread (Add Banana If You Like). A Universal Favourite!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/qtirovgc75c7a0dedfrt",
+    IsProductAdded:false
+  },
+];
+
+const loopProducts = document.getElementById("loopProducts");
+
+function loopProducts1(){
+loopProducts.innerHTML= belgianData.map(({id,foodName,price,description,imgURL,IsProductAdded})=>
+  `    <div class="pt-3 d-flex justify-content-around" data-idx="${id}">
+   <div class="col-lg-8 d-flex itemC">
+          <div class="col-lg-10 ps-2" >
+            <ul class="list-unstyled ">
+              <li><img src="./pinpng.com-veg-icon-png-740774.png" alt="veg logo" width="16"><i class="fa-solid fa-star"></i><span class="bestS"><strong>Bestseller</strong></span></li>
+              <li class="pt-1 dishN" id="name1"><strong>${foodName}</strong></li>
+              <li class="price1">₹${price}</li>
+            </ul>
+            <div class="ingre col-lg-11">
+              <p id="desc">${description}</p>
+            </div>
+          </div>
+          <div class="foodPhoto1" style="background-image: url('${imgURL}');background-size: contain; height:7em; width: 13%">
+            ${IsProductAdded === true ? `<div class="text-center" style="padding-top: 5rem;" onclick="removeItemFromCart(${id})"><button class="btn btn-outline-danger w-75" style="font-size: x-small; background-color: white; font-weight: 600 ;">Remove <i class="fa-solid fa-minus" style="font-size: 0.5rem;"></i></button></div>`:`<div class="text-center" style="padding-top: 5rem;" onclick="addToCart(${id})"><button class="btn btn-outline-success w-75" style="font-size: x-small; background-color: white; font-weight: 600 ;">ADD<i class="fa-solid fa-plus" style="font-size: 0.5rem;"></i></button></div>`}
+        </div>
+        </div>
+        </div> `
+)
+}
+loopProducts1();
+var cart=[];
+
+function addToCart(id) {
+for(var i=0;i<belgianData.length;i++){
+if(belgianData[i].id===id){
+  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
+  cart.push(belgianData[i]);
+}
+}
+loopProducts1();
+updateCartCount();
+}
+function removeItemFromCart(id){
+  for(var i=0;i<belgianData.length;i++){
+    if(belgianData[i].id===id){
+  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
+  cart.pop(belgianData[i]);
+  }
+}
+loopProducts1();
+updateCartCount();
+}
+
+function updateCartCount(){
+const cartcount = document.getElementById("cartcount");
+cartcount.innerHTML = ` <a class="nav-link shopcount" href="#"><strong>${cart.length}</strong> <i class="fa-solid fa-cart-shopping"></i></a>`
+}
+updateCartCount();
+const searchfield = document.getElementById('searchresult');
+searchfield.style.display="none";
   </script>
 </body>
 </html>

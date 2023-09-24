@@ -119,37 +119,37 @@
  <script>
     AOS.init();
     //foodData is array of objects
-    var pancakeData = [
+    var belgianData = [
   {
     id: 1,
-    foodName: "Holla Nutella 12pcs",
-    price: 220,
-    description: "Protein (n*6. 25) 6. 4 g, total fat 18. 7 g, carbohydrate 51. 5 g, energy 320. 5 kcal, total sugar 18. 5 g- per 100 gm",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/771e25555054d9159f30fd0e3fb9d362",
+    foodName: "Chocolate Overload Dark Waffle",
+    price: 165,
+    description: "Signature Dark Chocolate Waffle + Melted Belgian Dark Chocolate. Double The Chocolate!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ggnwmgrznp4jjzwwyhjx",
     IsProductAdded:false
   },
   {
     id: 2,
-    foodName: "Chocolate Lovely 12pcs",
-    price: 260,
-    description: "Protein (n*6. 25) 6. 26 g, total fat 17. 32 g, carbohydrate 45. 74 g, energy 363. 9 kcal, total sugar 27. 25 g- per 100 gm",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/d4d5654a4d1a3b8af7aa67a03f221d8f",
+    foodName: "Almond Brownie Waffle",
+    price: 182,
+    description: "The Best Of Two Worlds In A Single Bite - A Waffle And A Brownie. With Deliciously Rich Melted Chocolate and Almonds. Your Doorway To Heaven!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lyohj85p1nfyuyn2dr73",
     IsProductAdded:false
   },
   {
     id: 3,
-    foodName: "Kitkat Mini Pancakes 12pcs",
-    price: 220,
-    description: "Protein (n*6. 25) 6. 5 g, total fat 19. 5 g, carbohydrate 52. 5 g, energy 340. 5 kcal, total sugar 18. 5 g- per 100 gm",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/cc2570a0e9d888cca5eb436f171c7814",
+    foodName: "Triple Chocolate Waffle",
+    price: 175,
+    description: "Signature Dark Chocolate Waffle + 3 Layers Of Melted White Chocolate, Belgian Milk Chocolate And Belgian Dark Chocolate. The Most Indulgent Chocolate Waffle Ever!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/onq8rhxujd0sx8kubaew",
     IsProductAdded:false
   },
   {
     id: 4,
-    foodName: "Maple Lady 12pcs",
-    price: 180,
-    description: "Protein (n*6. 25) 5. 76 g, total fat 9. 42 g, carbohydrate 52. 33 g, energy 317. 2 kcal, total sugar 12. 3 g- per 100 gm ",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/d2aa8f968780f6877f64f6a9db86a55d",
+    foodName: "Naked Nutella Waffle",
+    price: 185,
+    description: "Classic Crispy Waffle + Premium European Chocolate Hazelnut Spread (Add Banana If You Like). A Universal Favourite!",
+    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/qtirovgc75c7a0dedfrt",
     IsProductAdded:false
   },
 ];
@@ -157,7 +157,7 @@
 const loopProducts = document.getElementById("loopProducts");
 
 function loopProducts1(){
-loopProducts.innerHTML= pancakeData.map(({id,foodName,price,description,imgURL,IsProductAdded})=>
+loopProducts.innerHTML= belgianData.map(({id,foodName,price,description,imgURL,IsProductAdded})=>
   `    <div class="pt-3 d-flex justify-content-around" data-idx="${id}">
    <div class="col-lg-8 d-flex itemC">
           <div class="col-lg-10 ps-2" >
@@ -181,20 +181,20 @@ loopProducts1();
 var cart=[];
 
 function addToCart(id) {
-for(var i=0;i<pancakeData.length;i++){
-if(pancakeData[i].id===id){
-  pancakeData[i].IsProductAdded = !pancakeData[i].IsProductAdded
-  cart.push(pancakeData[i]);
+for(var i=0;i<belgianData.length;i++){
+if(belgianData[i].id===id){
+  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
+  cart.push(belgianData[i]);
 }
 }
 loopProducts1();
 updateCartCount();
 }
 function removeItemFromCart(id){
-  for(var i=0;i<pancakeData.length;i++){
-    if(pancakeData[i].id===id){
-  pancakeData[i].IsProductAdded = !pancakeData[i].IsProductAdded
-  cart.pop(pancakeData[i]);
+  for(var i=0;i<belgianData.length;i++){
+    if(belgianData[i].id===id){
+  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
+  cart.pop(belgianData[i]);
   }
 }
 loopProducts1();
