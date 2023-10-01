@@ -8,7 +8,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
   <script src="/main.js" ></script>
-  <title>The Belgian Waffle Co.</title>
+  <title>LeanCrust Pizza- ThinCrust Experts</title>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg col-12" >
@@ -91,7 +91,7 @@
           <div class="d-flex col-lg-6">
             <ul class="list-unstyled d-flex">
               <li class="text-secondary fs pe-1">Home /</li>
-              <li class="text-secondary fs1"> The Belgian Waffle Co.</li>
+              <li class="text-secondary fs1"> LeanCrust Pizza- ThinCrust Experts</li>
             </ul>
           </div>
           <div class="col-lg-6 text-end">
@@ -100,10 +100,10 @@
           </div>
         <div class="d-flex ">
           <ul class="list-unstyled col-6">
-            <li class="mRestName">The Belgian Waffle Co.</li>
-            <li class="typesAvail pb-1">Waffle, Desserts</li>
-           <li class="typesAvail">Timings: 11 AM - 2 AM</li>
-           <li class="text-secondary pt-3"><i class="fa-solid fa-person-biking pe-2 "></i> <span>2.2 kms | ₹41 Delivery fee will apply</span></li>
+            <li class="mRestName">LeanCrust Pizza- ThinCrust Experts</li>
+            <li class="typesAvail pb-1">Pizzas, Italian</li>
+           <li class="typesAvail">Timings: 12 PM - 2 AM</li>
+           <li class="text-secondary pt-3"><i class="fa-solid fa-person-biking pe-2 "></i> <span>1.8 kms | ₹39 Delivery fee will apply</span></li>
           </ul>
           </div>
         </div>
@@ -119,37 +119,37 @@
  <script>
     AOS.init();
     //foodData is array of objects
-    var belgianData = [
+    var leanCrustData = [
   {
     id: 1,
-    foodName: "Chocolate Overload Dark Waffle",
-    price: 165,
-    description: "Signature Dark Chocolate Waffle + Melted Belgian Dark Chocolate. Double The Chocolate!",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ggnwmgrznp4jjzwwyhjx",
+    foodName: "Old World Margherita Pizza",
+    price: 299,
+    description: "[6 Slices, Serves 1-2] Mozzarella Cheese | Super Thin Crust base",
+    imgURL: "https://b.zmtcdn.com/data/dish_photos/afa/a8e80f24132432b151e943800d94aafa.jpg?fit=around|130:130&crop=130:130;*,*",
     IsProductAdded:false
   },
   {
     id: 2,
-    foodName: "Almond Brownie Waffle",
-    price: 182,
-    description: "The Best Of Two Worlds In A Single Bite - A Waffle And A Brownie. With Deliciously Rich Melted Chocolate and Almonds. Your Doorway To Heaven!",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lyohj85p1nfyuyn2dr73",
+    foodName: "Garden Harvest Pizza",
+    price: 299,
+    description: "[6 Slices, Serves 1-2] Capsicum | Onion | Super Thin Crust base",
+    imgURL: "https://b.zmtcdn.com/data/dish_photos/621/d416b1e151c8633193a5303782bd0621.jpg?fit=around|130:130&crop=130:130;*,*",
     IsProductAdded:false
   },
   {
     id: 3,
-    foodName: "Triple Chocolate Waffle",
-    price: 175,
-    description: "Signature Dark Chocolate Waffle + 3 Layers Of Melted White Chocolate, Belgian Milk Chocolate And Belgian Dark Chocolate. The Most Indulgent Chocolate Waffle Ever!",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/onq8rhxujd0sx8kubaew",
+    foodName: "Veggie Delight Pizza",
+    price: 299,
+    description: "[6 Slices, Serves 1-2] Tomato | Golden Corn | Super Thin Crust base",
+    imgURL: "https://b.zmtcdn.com/data/dish_photos/3c4/b7664c7a5833e295699748da858023c4.jpg?fit=around|130:130&crop=130:130;*,*",
     IsProductAdded:false
   },
   {
     id: 4,
-    foodName: "Naked Nutella Waffle",
-    price: 185,
-    description: "Classic Crispy Waffle + Premium European Chocolate Hazelnut Spread (Add Banana If You Like). A Universal Favourite!",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/qtirovgc75c7a0dedfrt",
+    foodName: "Spicy Hotshot Pizza",
+    price: 369,
+    description: "[6 Slices, Serves 1-2] Golden Corn | Onion | Jalapeno | Red Paprika | Super Thin Crust base",
+    imgURL: "https://b.zmtcdn.com/data/dish_photos/eb0/1a36ebac2b1ee2f52250fbf6ff288eb0.jpg?fit=around|130:130&crop=130:130;*,*",
     IsProductAdded:false
   },
 ];
@@ -157,7 +157,7 @@
 const loopProducts = document.getElementById("loopProducts");
 
 function loopProducts1(){
-loopProducts.innerHTML= belgianData.map(({id,foodName,price,description,imgURL,IsProductAdded})=>
+loopProducts.innerHTML= leanCrustData.map(({id,foodName,price,description,imgURL,IsProductAdded})=>
   `    <div class="pt-3 d-flex justify-content-around" data-idx="${id}">
    <div class="col-lg-8 d-flex itemC">
           <div class="col-lg-10 ps-2" >
@@ -181,20 +181,20 @@ loopProducts1();
 var cart=[];
 
 function addToCart(id) {
-for(var i=0;i<belgianData.length;i++){
-if(belgianData[i].id===id){
-  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
-  cart.push(belgianData[i]);
+for(var i=0;i<leanCrustData.length;i++){
+if(leanCrustData[i].id===id){
+  leanCrustData[i].IsProductAdded = !leanCrustData[i].IsProductAdded
+  cart.push(leanCrustData[i]);
 }
 }
 loopProducts1();
 updateCartCount();
 }
 function removeItemFromCart(id){
-  for(var i=0;i<belgianData.length;i++){
-    if(belgianData[i].id===id){
-  belgianData[i].IsProductAdded = !belgianData[i].IsProductAdded
-  cart.pop(belgianData[i]);
+  for(var i=0;i<leanCrustData.length;i++){
+    if(leanCrustData[i].id===id){
+  leanCrustData[i].IsProductAdded = !leanCrustData[i].IsProductAdded
+  cart.pop(leanCrustData[i]);
   }
 }
 loopProducts1();

@@ -26,8 +26,6 @@ function searchItem() {
   }
 }
 
-
-
 // function addToCart(id) {
 
 //   debugger;
@@ -38,8 +36,8 @@ function searchItem() {
 //     }
 //   }
 // }
-function clearCart(){
-  cart=[];
+function clearCart() {
+  cart = [];
 }
 
 // function removeItemFromCart(id){
@@ -51,40 +49,52 @@ function clearCart(){
 //   }
 // }
 // }
-var subwayData = [
+
+var loginData = [
   {
-    id: 1,
-    foodName: "Paneer Achari",
-    price: 279,
-    description: "Multigrain toasted Sub with chunks of paneer, achari mayo, pickled onion, capsicum, tomato and chilli mayo. Serving size - 240 g/ 589 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/b33b19910a5f966e3afe9149b0326f88",
-    IsProductAdded:false
+    username: "code",
+    password: "code@1234",
   },
   {
-    id: 2,
-    foodName: "Crunchy Mexican",
-    price: 229,
-    description: "Multigrain toasted Sub with Mexican bean patty, tomato, capsicum, onion, olives, jalapeño, southwest chipotle sauce & crunchy nachos. Serving size - 295 g/ 702 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/d7cd2bf55697e97c568f5789299822a7",
-    IsProductAdded:false
+    username: "hina",
+    password: "hina@1234",
   },
   {
-    id: 3,
-    foodName: "Chilli Cheese",
-    price: 279,
-    description: "Multigrain, 3-cheese toasted Sub with herby aloo patty, jalapeño, onion & capsicum with chilli mayo. Serving size - 284 g/ 678 kcal. Allergens - Contains wheat, rye, barley, oats, milk & soy.",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/c6b1c34fc51dc5f268ea14834569fb7d",
-    IsProductAdded:false
-  },
-  {
-    id: 4,
-    foodName: "Italian Pesto",
-    price: 299,
-    description: "A pesto flavoured toasted sub loaded with tomatoes, cucumber & onions. This warm sandwich has flavourful spinach ‘n cheese patty topped with creamy Italian sauce & pesto sauce. Requires no customization. Serving size - 234 g/ 458 kcal. Allergens - Contains wheat, milk, barley, oats, nuts & soy.",
-    imgURL: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/343eb86e2156479e0cb62b700a04eefd",
-    IsProductAdded:false
+    username: "user",
+    password: "user@1234",
   },
 ];
+
+function loginValidate() {
+  debugger;
+  const userId = document.getElementById("userid").value.toLowerCase();
+  const loginPass = document.getElementById("userpass").value.toLowerCase();
+
+  if (userId === "") {
+    document.getElementById("usernameError").style.display = "";
+    document.getElementById("usernameError").innerHTML = "username cannot be empty";
+  } else {
+    document.getElementById("usernameError").style.display = "none";
+    document.getElementById("usernameError").innerHTML = "";
+  }
+
+  if (loginPass === "") {
+    document.getElementById("passError").style.display = "";
+    document.getElementById("passError").innerHTML = "password cannot be empty";
+  } else {
+    document.getElementById("usernameError").style.display = "none";
+    document.getElementById("usernameError").innerHTML = "";
+  }
+
+  loginData.map(({ username, password }) => {
+    if (userId === username && loginPass === password) {
+      location.href = "http://127.0.0.1:5500/Index.html";
+    } else {
+      document.getElementById("loginError").style.display = "";
+      document.getElementById("loginError").innerHTML = "incorrect userid and password";
+    }
+  });
+}
 // const loopin = document.getElementsByClassName("loopin");
 // const price = document.getElementsByClassName("price1");
 // const desc = document.getElementById("desc");
